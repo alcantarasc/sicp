@@ -1,0 +1,13 @@
+(define (smaller x y)
+    (if (< x y) x y))
+
+(define (square x)
+  (* x x))
+
+(define (larger_sum a b c)
+  (define sml (smaller(smaller a b) c))
+  (define error "error")
+  (if (= a sml) (+ (square b) (square c)) 
+  (if (= b sml) (+ (square c) (square a)) 
+  (if (= c sml) (+ (square a) (square b)) 
+  error))))
